@@ -48,15 +48,14 @@
                                             </button>
                                           </form>
 
-{{-- 
-                                        <form action="{{ route('comunas.destroy', ['comuna' => $comuna->comu_codi]) }}"
-                                            method='POST' style="display: inline-block">
-                                            @method('delete')
-                                            @csrf
-                                            <input
-                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
-                                                type="submit" value="Delete">
-                                        </form> --}}
+
+                                          <form action="{{ route('paciente.destroy', $paciente->id_Paciente) }}" method="POST" >
+                                            @csrf 
+                                            @method('DELETE')
+                                              <button class="btn btn-danger btn-sm">
+                                                <span class="fas fa-user-edit">Eliminar</span>
+                                              </button>
+                                            </form>
                                     </td> 
                                 </tr>
                             @endforeach

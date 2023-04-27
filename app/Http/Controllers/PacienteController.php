@@ -84,6 +84,8 @@ class PacienteController extends Controller
      */
     public function destroy(string $id)
     {
-       
+        $pacientes = paciente::find($id);
+        $pacientes->delete();
+        return redirect()->route("paciente.index");
     }
 }
