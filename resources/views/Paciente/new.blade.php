@@ -29,23 +29,9 @@
 
 
         <div class="col mb-3">
-          <label for="nombres" class="form-label">Nombresombres</label>
+          <label for="nombres" class="form-label">Nombres y apellidos</label>
           <input type="text" required class="form-control" id="nombres"  aria-describedby="nombres"
             name="nombres" placeholder="nombres">
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col mb-3">
-            <label for="apellidos" class="form-label">Apellidos</label>
-            <input type="text" required class="form-control" id="apellidos"  aria-describedby="apellidos"
-              name="apellidos" placeholder="apellidos">
-        </div>
-
-        <div class="col mb-3">
-            <label for="fecha_nacimiento" class="form-label">Fecha Nacimiento</label>
-            <input type="date" required class="form-control" id="fecha_nacimiento"  aria-describedby="fecha_nacimiento"
-              name="fecha_nacimiento" placeholder="fecha_nacimiento">
         </div>
       </div>
 

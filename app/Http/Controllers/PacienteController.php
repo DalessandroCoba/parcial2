@@ -56,7 +56,8 @@ class PacienteController extends Controller
      */
     public function edit(string $id)
     {
-       
+        $pacientes = Paciente::find($id);
+        return view("paciente.update", compact('pacientes'));
     }
 
     /**
@@ -64,7 +65,18 @@ class PacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $pacientes = Paciente::find($id);
+
+        $pacientes->id_Paciente=$request->post('documento');
+        $pacientes->nom_Paciente=$request->post('nombres');
+        $pacientes->age_Paciente=$request->post('edad');
+        $pacientes->tel_Paciente=$request->post('telefono');
+        $pacientes->email_Paciente=$request->post('correo');
+        $pacientes->dir_Paciente=$request->post('direccion');
+        $pacientes->estado=$request->post('estado');
+        $pacientes->save();
+
+        return redirect()->route("paciente.index");
     }
 
     /**

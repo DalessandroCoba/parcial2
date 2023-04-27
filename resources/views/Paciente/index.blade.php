@@ -24,8 +24,6 @@
                             <tr>
                                 <th scope="col">ID Paciente</th>
                                 <th scope="col">Nombres</th>
-                                <th scope="col">Apellidos</th>
-                                <th scope="col">Fceha Nacimiento</th>
                                 <th scope="col">Edad Paciente</th>
                                 <th scope="col">Telefono</th>
                                 <th scope="col">Correo</th>
@@ -38,19 +36,17 @@
                                 <tr>
                                     <th scope="row">{{ $paciente->id_Paciente }}</th>
                                     <td>{{ $paciente->nom_Paciente }}</td>
-                                    <td>{{ $paciente->ape_Paciente }}</td>
-                                    <td>{{ $paciente->fecha_Nac_Paciente }}</td>
                                     <td>{{ $paciente->age_Paciente }}</td>
                                     <td>{{ $paciente->tel_Paciente }}</td>
                                     <td>{{ $paciente->email_Paciente }}</td>
                                     <td>{{ $paciente->dir_Paciente }}</td>
                                     <td>{{ $paciente->estado }}</td>
                                      <td>
-                                        {{-- <form action="{{ route('paciente.edit', $paciente->id_Paciente) }}" method="GET">
+                                         <form action="{{ route('paciente.edit', $paciente->id_Paciente) }}" method="GET">
                                             <button class="btn btn-warning btn-sm">
                                               <span class="fas fa-user-edit">editar</span>
                                             </button>
-                                          </form> --}}
+                                          </form>
 
 {{-- 
                                         <form action="{{ route('comunas.destroy', ['comuna' => $comuna->comu_codi]) }}"
