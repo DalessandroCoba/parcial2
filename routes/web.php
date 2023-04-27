@@ -29,7 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get('/pacientes', [PacienteController::class, 'index'])->name('paciente.index');
-
+    Route::get('/pacientes/create', [PacienteController::class, 'create'])->name('paciente.create');
+    Route::post('/store', [PacienteController::class, 'store'])->name('paciente.store');
 });
 
 require __DIR__.'/auth.php';

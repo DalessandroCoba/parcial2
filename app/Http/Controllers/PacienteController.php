@@ -13,11 +13,7 @@ class PacienteController extends Controller
     {
         $pacientes = Paciente::all();
         return view("paciente.index",["pacientes" => $pacientes]);
-        // $pacientes = Paciente::table('pacientes')
-        //  ->join('pacientes')
-        //  ->select('pacientes.*')
-        //  ->get();
-        //  return view('pacientes.index', ['pacientes' => $pacientes]);
+        
     }
 
     /**
@@ -25,7 +21,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-       
+        return view("paciente.new");
     }
 
     /**
@@ -33,7 +29,18 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $pacientes = new Paciente();
+
+        $pacientes->id_Paciente=$request->post('documento');
+        $pacientes->nom_Paciente=$request->post('nombres');
+        $pacientes->age_Paciente=$request->post('edad');
+        $pacientes->tel_Paciente=$request->post('telefono');
+        $pacientes->email_Paciente=$request->post('correo');
+        $pacientes->dir_Paciente=$request->post('direccion');
+        $pacientes->estado=$request->post('estado');
+        $pacientes->save();
+
+        return redirect()->route("paciente.index");
     }
 
     /**
